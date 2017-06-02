@@ -2,3 +2,7 @@ language: java
 jdk:
 - oraclejdk7
 - openjdk7
+deploy:
+  provider: heroku
+  api-key: 8baccd35-fa09-4d88-ae57-0d34b0bfcbca 
+  app: rigo
