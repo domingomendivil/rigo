@@ -3,17 +3,20 @@ package com.mag.beans;
 import java.util.Date;
 
 import javax.persistence.Entity;
+import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Entity
 @Table(name="Users")
 public class User {
 	
-	public String getUser() {
-		return user;
+
+	@Id
+	public String getUserName() {
+		return userName;
 	}
-	public void setUser(String user) {
-		this.user = user;
+	public void setUser(String userName) {
+		this.userName = userName;
 	}
 	public String getFirstname() {
 		return firstname;
@@ -33,7 +36,9 @@ public class User {
 	public void setDateOfBirth(Date dateOfBirth) {
 		this.dateOfBirth = dateOfBirth;
 	}
-	private String user;
+	
+	
+	private String userName;
 	private String firstname;
 	private String secondname;
 	private Date dateOfBirth;
