@@ -9,13 +9,11 @@
         </provider>
         <class>com.mag.beans.User</class>
           <properties>
-   		 	<property name="openjpa.ConnectionURL" 
-                value="jdbc:mysql://localhost:3306/test"/>
-            <property name="openjpa.ConnectionDriverName" 
+   		 	<property name="hibernate.connection.URL" value="jdbc:mysql://localhost:3306/test"/>
+            <property name="hibernate.connection.driver_class" 
                 value="com.mysql.jdbc.Driver"/>
-            <property name="openjpa.ConnectionUserName"  value="root"/>
-            <property name="openjpa.ConnectionPassword" value=""/>
-            <property name="openjpa.Log" value="DefaultLevel=TRACE"/>
+            <property name="hibernate.connection.user"  value="root"/>
+            <property name="hibernate.connection.password" value=""/>
             <property name="hibernate.dialect" value="org.hibernate.dialect.HSQLDialect"/>
         </properties>
     </persistence-unit>
