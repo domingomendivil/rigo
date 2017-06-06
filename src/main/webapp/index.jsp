@@ -10,6 +10,7 @@
 <body>
 <div id="main">s</div>
 
+<script src="js/model/login-model.js"></script>
 <script src="js/view/login-view.js"></script>
 <script src="js/app.js"></script>
 
