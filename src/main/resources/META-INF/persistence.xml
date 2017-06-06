@@ -9,12 +9,12 @@
         </provider>
         <class>com.mag.beans.User</class>
           <properties>
-   		 	<property name="hibernate.connection.URL" value="jdbc:mysql://localhost:3306/test"/>
-            <property name="hibernate.connection.driver_class" 
-                value="com.mysql.jdbc.Driver"/>
-            <property name="hibernate.connection.user"  value="root"/>
+   		 	<property name="hibernate.connection.URL" value="false"/>
+            <property name="hibernate.connection.driver_class" value="com.mysql.jdbc.Driver"/>
+            <property name="hibernate.connection.username"  value="root"/>
             <property name="hibernate.connection.password" value=""/>
             <property name="hibernate.dialect" value="org.hibernate.dialect.HSQLDialect"/>
+            <property name="javax.persistence.jdbc.url" value="jdbc:mysql://localhost:3306/test"/>
         </properties>
     </persistence-unit>
     
