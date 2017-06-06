@@ -10,7 +10,7 @@
 		
 		<init-param>
 			<param-name>javax.ws.rs.Application</param-name>
-			<param-value>uy.gub.dgi.application.MyApplication</param-value>
+			<param-value>com.mag.application.MyApplication</param-value>
 		</init-param>
 		<init-param>
 			<param-name>jersey.config.server.provider.packages</param-name>
