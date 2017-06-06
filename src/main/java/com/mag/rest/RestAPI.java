@@ -2,6 +2,8 @@ package com.mag.rest;
 
 import java.util.Date;
 
+import javax.annotation.security.PermitAll;
+import javax.annotation.security.RolesAllowed;
 import javax.inject.Inject;
 import javax.ws.rs.GET;
 import javax.ws.rs.Path;
@@ -18,15 +20,10 @@ public class RestAPI {
 	
 	@GET
 	@Path("/currentUser")
+	@PermitAll
 	@Produces(javax.ws.rs.core.MediaType.APPLICATION_JSON)
 	public User getUser(){
-		User user = new User();
-		user.setFirstname("Domingo");
-		user.setSecondname("Mendivil");
-		user.setDateOfBirth(new Date());
-		user.setUser("dmendivil");
-		return user;
-		//return dao.getById(user,User.class);
+		return dao.getById("d0178",User.class);
 	}
 	
 	@GET

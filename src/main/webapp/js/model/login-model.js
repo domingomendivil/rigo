@@ -1,4 +1,4 @@
 
 var LoginModel = Backbone.extend.Model({
-	url:''
+	url:'/rest/rest/'
 });

@@ -7,14 +7,14 @@
         <provider>
             org.apache.openjpa.persistence.PersistenceProviderImpl
         </provider>
-        <class>com.airport.domain.User</class>
+        <class>com.mag.beans.User</class>
           <properties>
    		 	<property name="openjpa.ConnectionURL" 
-                value="jdbc:mysql://localhost:3306/airport"/>
+                value="jdbc:mysql://localhost:3306/test"/>
             <property name="openjpa.ConnectionDriverName" 
                 value="com.mysql.jdbc.Driver"/>
             <property name="openjpa.ConnectionUserName"  value="root"/>
-            <property name="openjpa.ConnectionPassword" value="Royafa79"/>
+            <property name="openjpa.ConnectionPassword" value=""/>
             <property name="openjpa.Log" value="DefaultLevel=TRACE"/>
         </properties>
     </persistence-unit>
