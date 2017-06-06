@@ -4,7 +4,7 @@
         <wb-resource deploy-path="/" source-path="/src/main/webapp" tag="defaultRootSource"/>
         <wb-resource deploy-path="/WEB-INF/classes" source-path="/src"/>
         <wb-resource deploy-path="/WEB-INF/classes" source-path="/src/main/java"/>
-        <property name="context-root" value="rigo"/>
         <property name="java-output-path" value="/rigo/build/classes"/>
+        <property name="context-root" value="rigo2"/>
     </wb-module>
 </project-modules>
