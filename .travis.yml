@@ -1,7 +1,13 @@
 language: java
 jdk:
-- oraclejdk7
 - openjdk7
+
+services:
+- mysql
+
+before_script:
+ - mysql -u root -e 'CREATE DATABASE IF NOT EXISTS test;'
+ 
 deploy:
   provider: heroku
   api-key:  
