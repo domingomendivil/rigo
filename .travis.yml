@@ -8,7 +8,7 @@ services:
 before_script:
  - mysql -u root -e 'CREATE DATABASE IF NOT EXISTS test;'
  - mysql -u root -e 'USE test; create table USERS (USERNAME VARCHAR(10),FIRSTNAME VARCHAR(30),SECONDNAME VARCHAR(30), PRIMARY KEY(USERNAME));'
- - mysql -u root -e 'USE test; insert into USERS values('DMENDIVIL','DOMINGO','MENDIVIL');'
+ - mysql -u root -e "USE test; insert into USERS(USERNAME,FIRSTNAME,SECONDNAME) values ('DMENDIVIL','DOMINGO','MENDIVIL');"
  
   
  
