@@ -11,7 +11,7 @@ import javax.persistence.Table;
 public class User {
 	
 
-	@Id
+
 	public String getUserName() {
 		return userName;
 	}
@@ -37,8 +37,9 @@ public class User {
 		this.dateOfBirth = dateOfBirth;
 	}
 	
-	
+	@Id
 	private String userName;
+	
 	private String firstname;
 	private String secondname;
 	private Date dateOfBirth;
