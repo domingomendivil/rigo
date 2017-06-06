@@ -16,6 +16,7 @@
             <property name="openjpa.ConnectionUserName"  value="root"/>
             <property name="openjpa.ConnectionPassword" value=""/>
             <property name="openjpa.Log" value="DefaultLevel=TRACE"/>
+            <property name="hibernate.dialect" value="org.hibernate.dialect.HSQLDialect"/>
         </properties>
     </persistence-unit>
     
