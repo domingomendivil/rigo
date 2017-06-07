@@ -14,7 +14,7 @@
             <property name="hibernate.connection.username"  value="root"/>
             <property name="hibernate.connection.password" value=""/>
             <property name="hibernate.dialect" value="org.hibernate.dialect.HSQLDialect"/>
-            <property name="javax.persistence.jdbc.url" value="jdbc:mysql://localhost:3306/test"/>
+            <property name="javax.persistence.jdbc.url" value="jdbc:mysql://bc32713433d1de:31b94f6c@us-cdbr-iron-east-03.cleardb.net/heroku_fb8ad226ec5634a?reconnect=true"/>
         </properties>
     </persistence-unit>
     
