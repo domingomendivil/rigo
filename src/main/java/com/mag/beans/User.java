@@ -9,13 +9,11 @@ import javax.persistence.Table;
 @Entity
 @Table(name="Users")
 public class User {
-	
-
 
 	public String getUserName() {
 		return userName;
 	}
-	public void setUser(String userName) {
+	public void setUserName(String userName) {
 		this.userName = userName;
 	}
 	public String getFirstname() {
@@ -43,5 +41,12 @@ public class User {
 	private String firstname;
 	private String secondname;
 	private Date dateOfBirth;
+	private String password;
+	public String getPassword() {
+		return password;
+	}
+	public void setPassword(String password) {
+		this.password = password;
+	}
 	
 }
