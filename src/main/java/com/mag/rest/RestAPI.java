@@ -25,7 +25,7 @@ public class RestAPI {
 	@PermitAll
 	@Produces(javax.ws.rs.core.MediaType.APPLICATION_JSON)
 	public User getUser(){
-		String user = req.getUserPrincipal().getName();
+		String user = "d0178";
 		return dao.getById(user,User.class);
 	}
 	

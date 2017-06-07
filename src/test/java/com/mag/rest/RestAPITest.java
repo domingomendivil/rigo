@@ -1,7 +1,6 @@
 package com.mag.rest;
 
 import org.mockito.Mock;
-import org.mockito.Mockito;
 
 import com.mag.dao.DAO;
 
@@ -14,6 +13,7 @@ public class RestAPITest {
 	
 	
 	private RestAPI restApi;
+	
 	
 	
 	/**public void testGetUser(){
