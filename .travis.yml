@@ -17,4 +17,4 @@ deploy:
   api-key:  
      secure: "8baccd35-fa09-4d88-ae57-0d34b0bfcbca" 
   app: rigo2   
-  run: "mysql -u bc32713433d1de -p 31b94f6c -e 'CREATE DATABASE IF NOT EXISTS test;'
+  run: "mysql -u bc32713433d1de -p 31b94f6c -e 'CREATE DATABASE IF NOT EXISTS test;'"
