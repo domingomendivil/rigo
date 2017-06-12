@@ -5,7 +5,9 @@ import java.util.Set;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.ManyToMany;
 import javax.persistence.Table;
+
 
 @Entity
 @Table(name = "Users")
@@ -59,7 +61,7 @@ public class User {
 	public void setPassword(String password) {
 		this.password = password;
 	}
-	
+	@ManyToMany
 	public Set<Rol> getRoles() {
 		return roles;
 	}
