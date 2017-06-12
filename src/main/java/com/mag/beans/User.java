@@ -25,7 +25,10 @@ public class User {
 	
 	@ManyToMany
 	@JoinTable(name="users_roles",
-	joinColumns = {@JoinColumn(name="username", referencedColumnName="username"),@JoinColumn(name="id",referencedColumnName="role_id")})
+	joinColumns = {@JoinColumn(name = "username", referencedColumnName = "username")}, 
+	inverseJoinColumns = {@JoinColumn(name = "role_id", referencedColumnName = "id")})
+	
+
 	private Set<Rol> roles;
 
 	public String getUserName() {
