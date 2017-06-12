@@ -20,6 +20,8 @@ public class User {
 	private String secondname;
 	private Date dateOfBirth;
 	private String password;
+	
+	@ManyToMany
 	private Set<Rol> roles;
 
 	public String getUserName() {
@@ -61,7 +63,7 @@ public class User {
 	public void setPassword(String password) {
 		this.password = password;
 	}
-	@ManyToMany
+	
 	public Set<Rol> getRoles() {
 		return roles;
 	}
