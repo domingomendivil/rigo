@@ -24,7 +24,7 @@ public class User {
 	private String password;
 	
 	@ManyToMany
-	@JoinTable(name="user_roles",
+	@JoinTable(name="users_roles",
 	joinColumns = {@JoinColumn(name="username", referencedColumnName="username")})
 	private Set<Rol> roles;
 
