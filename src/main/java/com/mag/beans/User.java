@@ -18,6 +18,7 @@ public class User {
 	private String secondname;
 	private Date dateOfBirth;
 	private String password;
+	private Set<Rol> roles;
 
 	public String getUserName() {
 		return userName;
