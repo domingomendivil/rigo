@@ -22,7 +22,7 @@ public class RestAPI {
 	
 	@GET
 	@Path("/currentUser")
-	@RolesAllowed(value="operator")
+	@RolesAllowed({"administrator","operator"})
 	@Produces(javax.ws.rs.core.MediaType.APPLICATION_JSON)
 	public User getUser(){
 		String user = "d0178";
