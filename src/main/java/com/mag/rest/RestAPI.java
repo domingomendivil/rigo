@@ -1,6 +1,6 @@
 package com.mag.rest;
 
-import javax.annotation.security.PermitAll;
+import javax.annotation.security.RolesAllowed;
 import javax.inject.Inject;
 import javax.servlet.http.HttpServletRequest;
 import javax.ws.rs.GET;
@@ -22,7 +22,7 @@ public class RestAPI {
 	
 	@GET
 	@Path("/currentUser")
-	@PermitAll
+	@RolesAllowed(value="operator")
 	@Produces(javax.ws.rs.core.MediaType.APPLICATION_JSON)
 	public User getUser(){
 		String user = "d0178";
