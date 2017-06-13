@@ -1,21 +1,23 @@
 package com.mag.security;
 
 import java.security.Principal;
-import java.util.HashSet;
 
 import javax.ws.rs.core.SecurityContext;
 
+import com.mag.beans.User;
+
 public class RestSecurityContext implements SecurityContext {
-	private UserPrincipal userPrincipal;
-	private HashSet<String> roles;
 	
-	public RestSecurityContext(String user,HashSet<String> roles){
-		userPrincipal = new UserPrincipal(user);
+	private UserPrincipal userPrincipal;
+	private User user;
+	
+	public RestSecurityContext(User user){
+		userPrincipal = new UserPrincipal(user.getUserName());
 	}
 
 	
 	public boolean isUserInRole(String aRol) {
-		return roles.contains(aRol);
+		return user.getRoles().contains(aRol);
 	}
 	
 	public boolean isSecure() {
