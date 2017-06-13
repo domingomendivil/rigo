@@ -1,5 +1,9 @@
 package com.mag.security;
 
+import java.util.Date;
+import java.util.HashSet;
+
+import com.mag.beans.Rol;
 import com.mag.beans.User;
 
 /**
@@ -7,7 +11,7 @@ import com.mag.beans.User;
  * @author d0178
  *
  */
-public class AuthenticatorBroker {
+public class AuthenticatorBroker implements Authenticator{
 	
 
 	
@@ -28,8 +32,21 @@ public class AuthenticatorBroker {
 	
 
 	public User getUser(String authstr) throws AuthenticationException{
-		Authenticator aut = getAuthenticator(authstr);
-		return aut.getUser(authstr);
+		User user = new User();
+		user.setUserName("d0178");
+		user.setFirstname("Domingo");
+		user.setSecondname("Mendivil");
+		user.setDateOfBirth(new Date());
+		user.setPassword("a");
+		HashSet<Rol> roles = new HashSet<Rol>();
+		Rol aRole = new Rol();
+		aRole.setId("1");
+		aRole.setName("operator");
+		roles.add(aRole);
+		user.setRoles(roles);
+		return user;
+		//Authenticator aut = getAuthenticator(authstr);
+		//return aut.getUser(authstr);
 	}
 
 }
