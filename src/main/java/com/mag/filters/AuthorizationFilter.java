@@ -28,6 +28,7 @@ public class AuthorizationFilter implements ContainerRequestFilter {
 
 	
 	public void filter(ContainerRequestContext arg0) throws IOException {
+		System.out.println("filtering authorizationfilter");
 		if (arg0.getHeaders()!=null){
 			List<String> auth = arg0.getHeaders().get("Authorization");
 			String authstr = auth.get(0);

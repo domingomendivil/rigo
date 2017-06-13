@@ -7,5 +7,6 @@ public class MyApplication extends ResourceConfig {
 	public MyApplication() {
         register(new MyApplicationBinder());
         packages(true, "com.mag.rest").register(RolesAllowedDynamicFeature.class);
+        System.out.println("dynamic feature added");
     }
 }

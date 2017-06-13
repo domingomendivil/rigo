@@ -17,6 +17,7 @@ public class RestSecurityContext implements SecurityContext {
 
 	
 	public boolean isUserInRole(String aRol) {
+		System.out.println("is user in role "+aRol);
 		return user.getRoles().contains(aRol);
 	}
 	
