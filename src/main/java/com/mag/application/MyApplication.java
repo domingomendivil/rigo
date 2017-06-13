@@ -6,6 +6,6 @@ import org.glassfish.jersey.server.filter.RolesAllowedDynamicFeature;
 public class MyApplication extends ResourceConfig {
 	public MyApplication() {
         register(new MyApplicationBinder());
-        packages(true, "uy.gub.dgi.rest").register(RolesAllowedDynamicFeature.class);
+        packages(true, "com.mag.rest").register(RolesAllowedDynamicFeature.class);
     }
 }
