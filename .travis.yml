@@ -5,6 +5,7 @@ jdk:
 services:
 - mysql
 - docker
+- rabbitmq
 
 before_script:
  - mysql -u root -e 'CREATE DATABASE IF NOT EXISTS test;'

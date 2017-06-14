@@ -10,6 +10,7 @@ public class MyApplication extends ResourceConfig {
         register(new MyApplicationBinder());
         packages(true, "com.mag.rest").register(RolesAllowedDynamicFeature.class);
         register(AuthorizationFilter.class);
+        System.out.println("authorizationfilter class added");
         System.out.println("dynamic feature added");
     }
 }

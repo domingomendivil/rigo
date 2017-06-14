@@ -13,5 +13,6 @@ public class MyApplicationBinder extends AbstractBinder {
         DAO dao;
 		dao = new DAOImpl();
         bind(dao).to(DAO.class);
+        
     }
 }
