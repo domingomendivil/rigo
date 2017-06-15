@@ -12,7 +12,6 @@ import com.rabbitmq.client.DefaultConsumer;
 import com.rabbitmq.client.Envelope;
 
 public class Notification {
-	
 	private final static String QUEUE_NAME = "hello";
 	
 	private void notifie() throws IOException, TimeoutException{
@@ -32,5 +31,4 @@ public class Notification {
 		};
     	channel.basicConsume(QUEUE_NAME, true, consumer);
 	}
-
 }

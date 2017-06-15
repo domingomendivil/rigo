@@ -32,6 +32,7 @@ public class AuthenticatorBroker implements Authenticator{
 	
 
 	public User getUser(String authstr) throws AuthenticationException{
+		System.out.println("AuthenticatorBroker getUser");
 		User user = new User();
 		user.setUserName("d0178");
 		user.setFirstname("Domingo");
@@ -44,6 +45,7 @@ public class AuthenticatorBroker implements Authenticator{
 		aRole.setName("operator");
 		roles.add(aRole);
 		user.setRoles(roles);
+		System.out.println("AuthenticatorBroker getUser result "+user.getUserName());
 		return user;
 		//Authenticator aut = getAuthenticator(authstr);
 		//return aut.getUser(authstr);

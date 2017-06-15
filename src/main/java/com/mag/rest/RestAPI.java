@@ -2,11 +2,11 @@ package com.mag.rest;
 
 import javax.annotation.security.RolesAllowed;
 import javax.inject.Inject;
-import javax.servlet.http.HttpServletRequest;
 import javax.ws.rs.GET;
 import javax.ws.rs.Path;
 import javax.ws.rs.Produces;
 import javax.ws.rs.core.Context;
+import javax.ws.rs.core.SecurityContext;
 
 import com.mag.beans.User;
 import com.mag.dao.DAO;
@@ -18,14 +18,16 @@ public class RestAPI {
 	private DAO dao;
 	
 	@Context
-	private HttpServletRequest req;
+	private SecurityContext sc;
 	
 	@GET
 	@Path("/currentUser")
-	@RolesAllowed({"administrator","operator"})
+	@RolesAllowed({"operator","administrator"})
 	@Produces(javax.ws.rs.core.MediaType.APPLICATION_JSON)
 	public User getUser(){
-		System.out.println("current user "+req.getUserPrincipal().getName());
+		System.out.println("LLAMANDO A GETUSER !!!");
+		System.out.println("user principal : "+sc.getUserPrincipal());
+		System.out.println("current user "+sc.getUserPrincipal().getName());
 		String user = "d0178";
 		return dao.getById(user,User.class);
 	}

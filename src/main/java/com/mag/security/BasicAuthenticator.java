@@ -1,12 +1,18 @@
 package com.mag.security;
 
+import javax.inject.Inject;
+
 import com.mag.beans.User;
 import com.mag.dao.DAO;
 
 public class BasicAuthenticator implements Authenticator{
 	
+	@Inject
 	private DAO dao;
-	private PasswordValidatorImpl passwordValidator;
+	
+	@Inject
+	private PasswordValidator passwordValidator;
+	
 	private final static String REGEX ="";
 	
 	private String getUserStr(String authorization){

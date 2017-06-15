@@ -4,6 +4,7 @@ import java.io.IOException;
 import java.util.List;
 
 import javax.annotation.Priority;
+import javax.inject.Inject;
 import javax.ws.rs.Priorities;
 import javax.ws.rs.WebApplicationException;
 import javax.ws.rs.container.ContainerRequestContext;
@@ -24,23 +25,34 @@ import com.mag.security.RestSecurityContext;
 @Priority(Priorities.AUTHENTICATION)
 public class AuthorizationFilter implements ContainerRequestFilter {
 
+	@Inject
 	private Authenticator authenticator;
 
 	
 	public void filter(ContainerRequestContext arg0) throws IOException {
 		System.out.println("filtering authorizationfilter");
+		System.out.println("arg0 "+arg0);
 		if (arg0.getHeaders()!=null){
+			System.out.println("headers no null");
 			List<String> auth = arg0.getHeaders().get("Authorization");
-			String authstr = auth.get(0);
-			User user;
-			try {
-				user = authenticator.getUser(authstr);
-				SecurityContext sc = new RestSecurityContext(user);
-				arg0.setSecurityContext(sc);
-			} catch (AuthenticationException e) {
-				throw new WebApplicationException(Status.UNAUTHORIZED);
+			System.out.println("authorization list "+auth);
+			if (auth!=null){
+				String authstr = auth.get(0);
+				System.out.println("authorization "+authstr);
+				User user;
+				try {
+					System.out.println("Authenticator is "+authenticator);
+					user = authenticator.getUser(authstr);
+					SecurityContext sc = new RestSecurityContext(user);
+					arg0.setSecurityContext(sc);
+				} catch (AuthenticationException e) {
+					System.out.println("stacktrace");
+					e.printStackTrace();
+					throw new WebApplicationException(Status.UNAUTHORIZED);
+				}
 			}
-			
-		}	
+		}else{
+			System.out.println("headers null");
+		}
 	}
 }
