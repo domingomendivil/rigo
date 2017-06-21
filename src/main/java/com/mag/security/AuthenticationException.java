@@ -2,6 +2,15 @@ package com.mag.security;
 
 public class AuthenticationException extends Exception {
 
+	
+	public AuthenticationException() {
+		
+	}
+	
+	public AuthenticationException(Throwable e) {
+		super(e);
+	}
+
 	/**
 	 * 
 	 */

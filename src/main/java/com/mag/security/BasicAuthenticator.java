@@ -1,5 +1,7 @@
 package com.mag.security;
 
+import java.util.Base64;
+
 import javax.inject.Inject;
 
 import com.mag.beans.User;
@@ -16,18 +18,23 @@ public class BasicAuthenticator implements Authenticator{
 	private final static String REGEX ="\\:";
 	
 	private String getUserStr(String authorization){
-		String[] res = authorization.split(REGEX);
+		byte[] decoded = Base64.getDecoder().decode(authorization);
+		String aut = new String(decoded);
+		String[] res = aut.split(REGEX);
 		return res[0];
 	}
 	
 	public User getUser(String authorization) throws AuthenticationException{
-		
-		String userStr = getUserStr(authorization);
-		String password = getPassword(authorization);
-		if (validate(userStr,password)){
-			return dao.getById(userStr,User.class);
-		}else{
-			throw new AuthenticationException();
+		try{
+			String userStr = getUserStr(authorization);
+			String password = getPassword(authorization);
+			if (validate(userStr,password)){
+				return dao.getById(userStr,User.class);
+			}else{
+				throw new AuthenticationException();
+			}
+		}catch(IllegalArgumentException e){
+			throw new AuthenticationException(e);
 		}
 		
 		
@@ -38,7 +45,9 @@ public class BasicAuthenticator implements Authenticator{
 	}
 
 	private String getPassword(String authorization) {
-		String[] res = authorization.split(REGEX);
+		byte[] decoded = Base64.getDecoder().decode(authorization);
+		String aut = new String(decoded);		
+		String[] res = aut.split(REGEX);
 		return res[1];
 	}
 
