@@ -10,7 +10,6 @@ import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
 import javax.persistence.Table;
 
-
 @Entity
 @Table(name = "Users")
 public class User {
@@ -22,17 +21,25 @@ public class User {
 	private String secondname;
 	private Date dateOfBirth;
 	private String password;
-	
+	private String salt;
+
 	@ManyToMany
-	@JoinTable(name="users_roles",
-	joinColumns = {@JoinColumn(name = "username", referencedColumnName = "username")}, 
-	inverseJoinColumns = {@JoinColumn(name = "role_id", referencedColumnName = "id")})
-	
+	@JoinTable(name = "users_roles", joinColumns = {
+			@JoinColumn(name = "username", referencedColumnName = "username") }, inverseJoinColumns = {
+					@JoinColumn(name = "role_id", referencedColumnName = "id") })
 
 	private Set<Rol> roles;
 
 	public String getUserName() {
 		return userName;
+	}
+
+	public String getSalt() {
+		return salt;
+	}
+
+	public void setSalt(String salt) {
+		this.salt = salt;
 	}
 
 	public void setUserName(String userName) {
@@ -70,13 +77,13 @@ public class User {
 	public void setPassword(String password) {
 		this.password = password;
 	}
-	
+
 	public Set<Rol> getRoles() {
 		return roles;
 	}
-	
-	public void setRoles(Set<Rol> roles){
-		this.roles=roles;
+
+	public void setRoles(Set<Rol> roles) {
+		this.roles = roles;
 	}
 
 }
