@@ -15,7 +15,7 @@ import com.mag.dao.DAO;
 
 /**
  * 
- * @author d0178 - Domingo Mendivil
+ * @author d0178 - Domingo Mendivil -
  *
  */
 public class PasswordValidatorImpl implements PasswordValidator {
