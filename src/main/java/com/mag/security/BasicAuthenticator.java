@@ -13,12 +13,11 @@ public class BasicAuthenticator implements Authenticator{
 	@Inject
 	private PasswordValidator passwordValidator;
 	
-	private final static String REGEX ="";
+	private final static String REGEX ="\\:";
 	
 	private String getUserStr(String authorization){
-		//TODO
-		authorization.split(REGEX);
-		return null;
+		String[] res = authorization.split(REGEX);
+		return res[0];
 	}
 	
 	public User getUser(String authorization) throws AuthenticationException{
@@ -39,8 +38,9 @@ public class BasicAuthenticator implements Authenticator{
 	}
 
 	private String getPassword(String authorization) {
-		authorization.split(REGEX);
-		return null;
+		String[] res = authorization.split(REGEX);
+		return res[1];
 	}
+
 
 }
