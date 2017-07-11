@@ -1,22 +1,41 @@
+App.Views.LoginView = Backbone.View.extend({
 
-var LoginView = Backbone.View.extend({
-	el: $('#main'),
-	
-	init: function(){this.render()},
-	
-	events:{'click':'procesLogin'},
-	
-	processLogin: function(){
-		console.log("processlogin");
-			window.alert("login");
-	},
-	render: function(){
-		var self= this;
-		console.log("consola ....."+ $("#personTemplate"));
-		$.get('templates/login.html', function (data) {
-				console.log("rendering login");
-		       self.$el.html(_.template(data)());
-		    }, 'html');
-	}
-});	
+	events:
+    {
+        "click #btnLogin": "submitLogin",
+        "click #btnCancel": "cancel"	
+    },
+    render: function () {
+    	var self = this;
+        $.get('templates/login2.html', function (data) {
+	      $(self.el).html(_.template(data)());
+	    }, 'html');
+        return this;
+    },
+    
+    submitLogin: function () {
+        var person = new App.Models.Person({name: $("#user").val()});
+        person.set("id","d0178");
+        console.log("antes de fetch");
+        person.fetch({
+            success: function(){
+                console.log("success");
+                principalView = new App.Views.PrincipalView();
+                principalView.render();
+            },
+            error: function (collection, response, options){
+            	console.log("res "+JSON.stringify(response));
+            	console.log("error");
+            }
+        }    );
+        console.log("ds de fetch");
+        this.model.add(person);
+    },
+    
+    cancel: function(){
+    	window.alert("cancel");
+    }
+});
+
+
 
