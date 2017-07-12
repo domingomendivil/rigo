@@ -1,5 +1,4 @@
 App.Views.LoginView = Backbone.View.extend({
-
 	events:
     {
         "click #btnLogin": "submitLogin",
@@ -15,13 +14,14 @@ App.Views.LoginView = Backbone.View.extend({
     
     submitLogin: function () {
         var person = new App.Models.Person({name: $("#user").val()});
-        person.set("id","d0178");
+        person.set("id",$("#user").val());
         console.log("antes de fetch");
         person.fetch({
             success: function(){
                 console.log("success");
-                principalView = new App.Views.PrincipalView();
+                principalView = new App.Views.PrincipalView({model:person});
                 principalView.render();
+                localStorage.setItem("token", person.get("token"));
             },
             error: function (collection, response, options){
             	console.log("res "+JSON.stringify(response));
@@ -36,6 +36,10 @@ App.Views.LoginView = Backbone.View.extend({
     	window.alert("cancel");
     }
 });
+
+
+
+
 
 
 

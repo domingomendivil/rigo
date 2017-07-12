@@ -4,9 +4,9 @@ App.Models.Person = Backbone.Model.extend({
     urlRoot: 'http://localhost:8083/users',
     validate: function () { },
     sync: function(method,model,options){
-    	console.log("SYNCHRONIZING");
     	options.success({
-            id: 1,
+            id: 178,
+            name:'Pepe'
         });
     	options.xhr = { status: 200 };
     }
